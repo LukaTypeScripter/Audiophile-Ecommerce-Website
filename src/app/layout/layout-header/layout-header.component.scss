@@ -1,0 +1,72 @@
+@use '../../../assets/styles/variables';
+@use '../../../assets/styles/legacyVariables';
+@use '../../../assets/styles/mixins';
+//mobile
+.header {
+  width: 100%;
+  background-color: variables.$color-background-header;
+  position: fixed;
+  top: 0;
+  z-index: legacyVariables.$level-1;
+  //container
+  &__container {
+    @include mixins.flex(center,center,row);
+    width: 100%;
+    position: relative;
+    max-width: variables.$navbarMaxWidth;
+    height: variables.$navbarHeight;
+    margin: 0 auto;
+    border-bottom: variables.$navbarBorderBottom;
+    transition-duration: .2s;
+    &-hamburger {
+      position: absolute;
+      left: variables.$leftFromLogoHeader;
+    }
+    &-cart {
+      position: absolute;
+      right: variables.$leftFromLogoHeader;
+    }
+    &-list {
+      display: none;
+    }
+  }
+  //tablet
+  @include mixins.tablet() {
+    padding: 0 variables.$paddingForSides;
+    &__container {
+      justify-content: unset;
+      max-width: unset;
+      &-hamburger {
+        position: static;
+        margin-right: variables.$spaceFromLogoTablet;
+      }
+    }
+  }
+
+  //desktop
+  @include mixins.desktop() {
+    &__container {
+      justify-content: center;
+      &-hamburger {
+        display: none;
+      }
+      &-list {
+        @include mixins.flex(center,center,row);
+        gap: variables.$headerListGapDesktop;
+        &-item {
+          a {
+            color: #fafafa;
+            font-size: variables.$font-size-14;
+            line-height: variables.$size-24;
+            font-weight: 700;
+            text-transform: uppercase;
+          }
+        }
+      }
+      &-logo {
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+}

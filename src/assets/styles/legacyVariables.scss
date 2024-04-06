@@ -1,0 +1,107 @@
+// common variables
+
+// main background color
+$main-bg: #071119;
+
+// main header text color
+$main-header-color: rgb(79, 232, 97);
+
+// auth block colors
+$auth-bg-color: rgba(55, 68, 94, 0.9);
+$reg-btn-color: rgb(21, 175, 68);
+$auth-btn-color: rgb(37, 43, 51);
+
+// rules background colors
+$rules-main-bg: #28a854;
+$rules-secondary-bg: #28a854;
+
+// play button color
+$play-btn: linear-gradient(138deg, #15b17a, #0ab413);
+
+// play button hover
+$play-btn-hover: inset 0 -1px 30px 20px #74ff4c,
+1px 1px 60px 8px rgba(19, 173, 75, 0.77);
+
+// colors
+$white: #fff;
+
+// header font sizes
+$font-size-header-l: 30px;
+$font-size-header-m: 24px;
+$font-size-header-s: 20px;
+
+// fonts-sizes
+$font-size-l: 18px;
+$font-size-m: 16px;
+$font-size-s: 14px;
+$font-size-xs: 12px;
+
+// index levels
+$level-0: 0;
+$level-1: 10;
+$level-2: 20;
+$level-3: 30;
+$level-4: 40;
+$level-5: 50;
+
+// responsive
+$tablet-l: 1000px;
+$tablet: 767px;
+$mobile: 479px;
+
+// authorization buttons animation
+$pulse: 1s pulse ease-in-out infinite both;
+$pulse-blue: 1s pulseblue ease-in-out infinite both;
+
+// play button animation
+$heartbeat-animation: heartbeat 1.5s ease-in-out infinite both;
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(55, 194, 130, 0.85);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(55, 194, 130, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(55, 194, 130, 0);
+  }
+}
+
+@keyframes pulseblue {
+  0% {
+    box-shadow: 0 0 0 0 rgba(55, 97, 194, 0.85);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(55, 194, 130, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(55, 194, 130, 0);
+  }
+}
+
+// play button animation
+@keyframes heartbeat {
+  from {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(0.91);
+  }
+  17% {
+    transform: scale(0.98);
+  }
+  33% {
+    transform: scale(0.87);
+  }
+  45% {
+    transform: scale(1);
+  }
+}
+
+@mixin dFlex($jc: center, $ai: center, $fd: row) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+  flex-direction: $fd;
+}

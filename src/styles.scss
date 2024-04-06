@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+@use 'assets/styles/reset';
+@use 'assets/styles/mixins';
+@use 'assets/styles/variables';
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+body {
+  @include mixins.hiddenScroll;
+  color: white;
+  font-family: "Manrope", sans-serif;
+}
+
+.overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
