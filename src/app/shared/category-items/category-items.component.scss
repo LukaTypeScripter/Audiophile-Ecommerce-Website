@@ -1,0 +1,43 @@
+@use '../../../assets/styles/variables';
+@use '../../../assets/styles/legacyVariables';
+@use '../../../assets/styles/mixins';
+.category__item {
+  padding-top: variables.$size-50;
+  position: relative;
+  width: 100%;
+  margin-bottom: 1rem;
+  &-img {
+    position: absolute;
+    width: variables.$size-128;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+  }
+  &-content {
+    padding-top: variables.$size-92;
+    padding-bottom: variables.$size-22;
+    border-radius: variables.$size-8;
+    background-color: #f1f1f1;
+    text-align: center;
+    &-title {
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: variables.$size-16;
+      margin-bottom: variables.$size-18;
+      color: variables.$color-background-header
+    }
+    a {
+      margin: 0 auto;
+      padding: 0;
+      height: auto;
+      color: #00000080;
+      gap: variables.$size-14;
+      display: flex;
+      width: fit-content;
+      text-transform: uppercase;
+      font-size: variables.$size-14;
+      align-items: center;
+      font-weight: 700;
+    }
+  }
+}

@@ -1,7 +1,11 @@
+@if (isOpen()) {
+  <div class="overlay" (click)="isOpen.set(false)">
+  </div>
+}
 <nav class="header">
   <div class="header__container">
     <!--hamburger-->
-      <button class="header__container-hamburger">
+      <button class="header__container-hamburger" (click)="isOpen.set(!isOpen())">
         <img src="./assets/images/shared/tablet/icon-hamburger.svg">
       </button>
     <!--logo-->
@@ -11,16 +15,16 @@
     <!--list-->
       <ul class="header__container-list">
         <li class="header__container-list-item">
-          <a href="" class="header__container-list-item-link">Home</a>
+          <a href="" class="header__container-list-item-link list">Home</a>
         </li>
         <li class="header__container-list-item">
-          <a href="" class="header__container-list-item-link">headphones</a>
+          <a href="" class="header__container-list-item-link list">headphones</a>
         </li>
         <li class="header__container-list-item">
-          <a href="" class="header__container-list-item-link">speakers</a>
+          <a href="" class="header__container-list-item-link list ">speakers</a>
         </li>
         <li class="header__container-list-item">
-          <a href="" class="header__container-list-item-link">earphones</a>
+          <a href="" class="header__container-list-item-link list ">earphones</a>
         </li>
       </ul>
     <!--cart-->
@@ -28,4 +32,6 @@
         <img src="./assets/images/shared/desktop/icon-cart.svg">
       </button>
   </div>
+
+    <audiophile-drop-down [open]="isOpen()"   />
 </nav>

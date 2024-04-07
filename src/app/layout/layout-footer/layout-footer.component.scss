@@ -1,0 +1,85 @@
+@use '../../../assets/styles/variables';
+@use '../../../assets/styles/legacyVariables';
+@use '../../../assets/styles/mixins';
+.footer {
+  padding: variables.$footerMobilePadding;
+  background-color: variables.$color-background-header;
+  width: 100%;
+  @include legacyVariables.dFlex();
+  &-line {
+    width: variables.$footerLIneWidth;
+    height: variables.$footerLineHeight;
+    background-color: variables.$footerLIneColor;
+    margin: variables.$footerSpace;
+    outline: none;
+    border: none;
+  }
+  &-content {
+    width: 100%;
+    position: relative;
+    &__section {
+      @include legacyVariables.dFlex(center,center,column);
+      gap: 3rem;
+      &-list {
+        @include legacyVariables.dFlex(center,center,column);
+        gap: 1rem;
+      }
+    }
+  }
+  &__container {
+    width: 100%;
+    max-width: variables.$navbarMaxWidth;
+  }
+  &--description {
+    margin: variables.$descriptionTextSpacingFooter;
+  }
+  &__socials {
+    margin-top: variables.$socialsSpacingFromTop;
+    @include legacyVariables.dFlex();
+    gap: variables.$size-16;
+  }
+  @include mixins.tablet() {
+    padding: 0 variables.$size-40 variables.$size-46 ;
+    &-content {
+      &__section {
+        align-items: initial;
+        &-list {
+          @include legacyVariables.dFlex(initial,initial,row);
+        }
+      }
+    }
+
+    &--description {
+      margin-top: variables.$size-36;
+      margin-bottom: variables.$size-78;
+      text-align: unset;
+    }
+    &--copyright {
+      text-align: unset;
+    }
+    &__socials {
+      width: unset;
+      position: absolute;
+      margin: 0;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  @include mixins.desktop() {
+    &-content {
+      &__section {
+        @include legacyVariables.dFlex(space-between,unset,row);
+      }
+    }
+    &--description {
+      text-align: unset;
+      width: variables.$size-540;
+      margin-top: variables.$size-36;
+      margin-bottom: variables.$size-50;
+    }
+    &__socials {
+      bottom: variables.$size-128;
+    }
+  }
+}

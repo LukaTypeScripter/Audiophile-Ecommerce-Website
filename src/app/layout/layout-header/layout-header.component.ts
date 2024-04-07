@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import {Component, signal} from '@angular/core';
+import {DropDownComponent} from "../../shared/drop-down/drop-down.component";
 
 @Component({
   selector: 'audiophile-layout-header',
   standalone: true,
-  imports: [],
+  imports: [DropDownComponent],
   templateUrl: './layout-header.component.html',
-  styleUrl: './layout-header.component.scss'
+  styleUrl: './layout-header.component.scss',
+
 })
 export class LayoutHeaderComponent {
-
+  isOpen = signal(false);
 }

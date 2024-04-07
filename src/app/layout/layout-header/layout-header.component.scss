@@ -53,15 +53,7 @@
       &-list {
         @include mixins.flex(center,center,row);
         gap: variables.$headerListGapDesktop;
-        &-item {
-          a {
-            color: #fafafa;
-            font-size: variables.$font-size-14;
-            line-height: variables.$size-24;
-            font-weight: 700;
-            text-transform: uppercase;
-          }
-        }
+
       }
       &-logo {
         position: absolute;

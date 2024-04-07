@@ -3,6 +3,8 @@
 @use 'assets/styles/mixins';
 @use 'assets/styles/variables';
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+
 body {
   @include mixins.hiddenScroll;
   color: white;
@@ -19,4 +21,18 @@ body {
   right: 0;
   background: rgba(0, 0, 0, 0.5);
   z-index: 10;
+}
+.list {
+  color: #fafafa;
+  font-size: variables.$font-size-14;
+  line-height: variables.$size-24;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.footer__texts {
+  text-align: center;
+  font-weight: 500;
+  font-size: .9375rem;
+  line-height: 1.5625rem;
+  color: #fafafa80
 }

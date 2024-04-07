@@ -5,6 +5,13 @@ $leftFromLogoHeader:1.5rem;
 $spaceFromLogoTablet:2.25rem;
 $paddingForSides:2.50rem;
 $headerListGapDesktop:2.125rem;
+$footerMobilePadding:0 1.5rem 2.375rem;
+$footerLIneColor:#d87d4a;
+$footerLIneWidth:6.3125rem;
+$footerLineHeight:.25rem;
+$footerSpace:0 auto 3rem;
+$socialsSpacingFromTop:3rem;
+$descriptionTextSpacingFooter:3rem 0;
 //Colors
 $color-background-header: #101010;
 $navbarBorderBottom:1px solid rgba(250, 250, 250, .1);
@@ -18,18 +25,22 @@ $size-18: 1.125rem; /* 18px ÷ 16px = 1.125rem */
 $size-20: 1.25rem; /* 20px ÷ 16px = 1.25rem */
 $size-22: 1.375rem; /* 22px ÷ 16px = 1.375rem */
 $size-24: 1.5rem; /* 24px ÷ 16px = 1.5rem */
-$size-36: 2.25rem; /* 36px ÷ 16px = 2.25rem */
+$size-36: 2.25rem;/* 36px ÷ 16px = 2.25rem */
+$size-40: 2.50rem;/* 40px ÷ 16px = 2.50rem */
+$size-46: 2.875rem;/* 46px ÷ 16px = 2.875rem */
 $size-76: 4.75rem; /* 76px ÷ 16px = 4.75rem */
 $size-78: 4.875rem; /* 78px ÷ 16px = 4.875rem */
 $size-92: 5.75rem; /* 92px ÷ 16px = 5.75rem */
 $size-50: 3.125rem; /* 50px ÷ 16px = 3.125rem */
 $size-60: 3.75rem; /* 60px ÷ 16px = 3.75rem */
 $size-64: 4rem; /* 64px ÷ 16px = 4rem */
-$size-100: 6.25rem; /* 100px ÷ 16px = 6.25rem */
+$size-90: 5.625rem;/* 90px ÷ 16px = 6.25rem */
+$size-100: 6.25rem;/* 100px ÷ 16px = 6.25rem */
+$size-128: 8rem; /* 128px ÷ 16px = 8rem */
 $size-160: 10rem; /* 160px ÷ 16px = 10rem */
 $size-170: 10.625rem; /* 170px ÷ 16px = 10.625rem */
 $size-220: 13.75rem; /* 220px ÷ 16px = 13.75rem */
-
+$size-540: 33.75rem;/* 540px ÷ 16px = 33.75rem */
 
 //Border radius
 $border-radius-4: 4px;
