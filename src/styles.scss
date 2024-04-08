@@ -36,3 +36,25 @@ body {
   line-height: 1.5625rem;
   color: #fafafa80
 }
+.btn-styles {
+  height: 3rem;
+  display: flex;
+  width: fit-content;
+  text-transform: uppercase;
+  font-size: .8125rem;
+  align-items: center;
+  font-weight: 700;
+  padding: 0 1.875rem;
+  border: 2px solid;
+}
+
+.btn-header {
+  background-color: #d87d4a;
+  color: white;
+  outline: none;
+  border: none;
+  margin-top: variables.$size-50;
+}
+.color {
+  background: black;
+}

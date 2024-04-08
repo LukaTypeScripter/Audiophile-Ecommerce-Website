@@ -1,0 +1,81 @@
+@use '../../../../assets/styles/variables';
+@use '../../../../assets/styles/legacyVariables';
+@use '../../../../assets/styles/mixins';
+.home-header {
+  width: 100%;
+  background-color: #101010;
+  position: relative;
+  img  {
+    width: 100%;
+  }
+  &__container {
+    @include legacyVariables.dFlex();
+    position: absolute;
+    left: 50%;
+    top:  variables.$size-90;
+    transform: translateX(-50%);
+    height: variables.$globalHeigth;
+    max-width: 69.375rem;
+    width: 100%;
+    &__content {
+      @include legacyVariables.dFlex(center,center,column);
+      text-align: center;
+      max-width: 33rem;
+      &--btn {
+        background-color: #d87d4a;
+        color: white;
+        outline: none;
+        border: none;
+
+      }
+      &-heading {
+        font-weight: 400;
+        font-size: .875rem;
+        line-height: 1.195rem;
+        letter-spacing: .625rem;
+        text-transform: uppercase;
+        color: #fafafa80;
+        &--size {
+          font-weight: 500;
+          font-size: .9375rem;
+          line-height: 1.5625rem;
+          letter-spacing: unset;
+          text-transform: capitalize;
+        }
+      }
+      &-title {
+        text-transform: uppercase;
+        font-size: variables.$size-36;
+        color: #fafafa;
+        letter-spacing: .080625rem;
+        margin-top: variables.$size-16;
+        margin-bottom: 1.4375rem;
+      }
+    }
+  }
+
+  @include mixins.tablet() {
+    &__container {
+      &__content {
+        width: 24rem;
+        &-title {
+          font-size: 3.5rem;
+          letter-spacing: .125rem;
+          margin: 1.5rem 0;
+        }
+      }
+    }
+  }
+
+  @include mixins.desktop() {
+    &__container {
+      justify-content: flex-start;
+      &__content {
+        width: 30rem;
+        &-title {
+          font-size: 4rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,178 @@
+@use '../../../assets/styles/variables';
+@use '../../../assets/styles/legacyVariables';
+@use '../../../assets/styles/mixins';
+main{
+  padding: 2.5rem 1.5rem 7.5rem;
+  background-color: #fafafa;
+  display: flex;
+  justify-content: center;
+  .wrapper {
+  width: 100%;
+  max-width: 69.375rem;
+  display: flex;
+  flex-direction: column;
+    gap: 6rem;
+  &__products {
+    width: 100%;
+    background-color: #d87d4a;
+    padding: 3.4375rem 1.5rem;
+    border-radius: .5rem;
+    background-image: url("../../../assets/images/home/desktop/pattern-circles.svg");
+    background-size: 31.25rem;
+    background-position: center -100px;
+    background-repeat: no-repeat;
+    &__image {
+      margin: 0 auto;
+      width: fit-content;
+      img  {
+        width: 11rem;
+      }
+    }
+    &__content {
+      @include legacyVariables.dFlex(center,center,column);
+      gap: 1.5rem;
+      h2 {
+        text-align: center;
+        color: #fff;
+        font-size: 2.25rem;
+        text-transform: uppercase;
+      }
+      p {
+        text-align: center;
+        color: #fafafa80;
+        font-weight: 500;
+        font-size: .9375rem;
+        line-height: 1.5625rem;
+      }
+    }
+  }
+  &__products2 {
+    width: 100%;
+    @include legacyVariables.dFlex(center,flex-start,column);
+    gap: 2rem;
+    padding: 6.3125rem 1.5rem;
+    border-radius: .5rem;
+    background-image: url(/assets/images/home/mobile/image-speaker-zx7.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+    &__products3 {
+        width: 100%;
+      @include legacyVariables.dFlex(center,center,column);
+      gap: 1rem;
+      img {
+        border-radius: 1rem;
+        width: 100%;
+      }
+      &__content {
+        width: 100%;
+        background-color: #f1f1f1;
+        border-radius: .5rem;
+        padding: 2.5625rem 1.5rem;
+        border-radius: 1rem;
+        h2 {
+          font-size: 1.75rem;
+          text-transform: uppercase;
+          margin-bottom: 2rem;
+          color: black;
+        }
+      }
+    }
+    &__radio {
+        width: 100%;
+      img {
+        width: 100%;
+      }
+      &__content  {
+
+        h2 {
+          font-size: 1.75rem;
+          text-transform: uppercase;
+          margin-top: 2.5rem;
+          margin-bottom: 2rem;
+          color: black;
+          text-align: center;
+          span {
+            color: #d87d4a;
+          }
+
+      }
+        &-description {
+          color: black;
+          text-align: center;
+        }
+
+      }
+    }
+  }
+
+  @include mixins.tablet() {
+    padding: 6rem 2.5rem;
+    .wrapper {
+      &__products2 {
+        background-image: url(/assets/images/home/tablet/image-speaker-zx7.jpg);
+      }
+      &__products {
+          background-size: 50rem;
+          background-position: center -250px;
+          padding: 3.25rem 1.5rem 4rem;
+
+        &__image {
+          img {
+            width: 24rem;
+          }
+        }
+        &__content {
+      h2 {
+        font-size: 3.5rem;
+         }
+        }
+      }
+      &__products3 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 1rem;
+
+        &__content {
+          padding: 5.5625rem 5rem;
+
+        }
+      }
+      &__items {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 1rem;
+      }
+      &__radio {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 3rem;
+        &__content {
+          margin: auto;
+          h2 {
+            font-size: 2.75rem;
+          }
+          &-description {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+  @include mixins.desktop() {
+    .wrapper {
+      &__products2 {
+        background-image: url(/assets/images/home/desktop/image-speaker-zx7.jpg);
+      }
+      &__products {
+      height: 35rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 8.625rem;
+        place-items: center;
+        background-position: -90px -50px;
+        padding: 0 5.9375rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+<audiophile-home-header />
+<main>
+  <div class="wrapper">
+    <section class="wrapper__items">
+      <audiophile-category-items />
+      <audiophile-category-items />
+      <audiophile-category-items />
+    </section>
+<!--products section one-->
+    <section class="wrapper__products">
+        <div class="wrapper__products__image">
+          <img src="/assets/images/shared/desktop/image-speakers.png" alt="">
+        </div>
+    <!---->
+      <div class="wrapper__products__content">
+        <h2>ZX9 Speaker</h2>
+        <p>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
+        <audiophile-button [btnConfig]="btnConfig.configOne"/>
+      </div>
+    </section>
+    <!--products section two-->
+    <section class="wrapper__products2">
+        <h2>ZX7 Speaker</h2>
+        <audiophile-button [btnConfig]="btnConfig.configTwo"/>
+    </section>
+  <!---->
+    <section class="wrapper__products3">
+      <img src="/assets/images/home/desktop/image-earphones-yx1.jpg" alt="">
+      <div class="wrapper__products3__content">
+        <h2>YX1 Earphones</h2>
+        <audiophile-button [btnConfig]="btnConfig.configTwo"/>
+      </div>
+    </section>
+<!--section 3-->
+    <section class="wrapper__radio">
+      <img src="./assets/images/shared/desktop/image-best-gear.jpg" alt="">
+      <div class="wrapper__radio__content">
+        <h2>Bringing you the  <span>best</span>  audio gear</h2>
+        <p class="wrapper__radio__content-description">Located at the heart of New York City, Audiophile is the premier store for high end headphones, earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration rooms available for you to browse and experience a wide range of our products. Stop by our store to meet some of the fantastic people who make Audiophile the best place to buy your portable audio equipment.</p>
+      </div>
+
+    </section>
+  </div>
+
+</main>
