@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, input} from '@angular/core';
+import {ConfigShop} from "../../lib/core/interfaces/configShop";
 
 @Component({
   selector: 'audiophile-category-items',
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './category-items.component.scss'
 })
 export class CategoryItemsComponent {
-
+    config = input<ConfigShop>()
 }

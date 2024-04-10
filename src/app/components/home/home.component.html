@@ -2,9 +2,11 @@
 <main>
   <div class="wrapper">
     <section class="wrapper__items">
-      <audiophile-category-items />
-      <audiophile-category-items />
-      <audiophile-category-items />
+      <ng-container *ngFor="let shop of configShop">
+        <audiophile-category-items [config]="shop" />
+      </ng-container>
+
+
     </section>
 <!--products section one-->
     <section class="wrapper__products">

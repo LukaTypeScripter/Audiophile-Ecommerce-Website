@@ -1,9 +1,9 @@
 <div class="drop-down" [ngClass]="{ 'open': open() }">
     <div class="drop-down__wrapper">
       <section>
-        <audiophile-category-items />
-        <audiophile-category-items />
-        <audiophile-category-items />
+        <ng-container *ngFor="let shop of configShop">
+          <audiophile-category-items [config]="shop" />
+        </ng-container>
       </section>
     </div>
 </div>

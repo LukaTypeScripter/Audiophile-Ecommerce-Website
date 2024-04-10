@@ -3,14 +3,16 @@ import {ButtonComponent} from "../../shared/button/button.component";
 import {BtnConfig} from "../../lib/core/interfaces/btnConfig";
 import {HomeHeaderComponent} from "./home-header/home-header.component";
 import {CategoryItemsComponent} from "../../shared/category-items/category-items.component";
-
+import {CommonModule} from "@angular/common";
+import {configShop} from "../../shared/entites";
 @Component({
   selector: 'audiophile-home',
   standalone: true,
   imports: [
     ButtonComponent,
     HomeHeaderComponent,
-    CategoryItemsComponent
+    CategoryItemsComponent,
+    CommonModule
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
@@ -28,5 +30,5 @@ export class HomeComponent {
       spaceFromTop:"0"
     }
   }
-
+  protected readonly configShop = configShop;
 }
