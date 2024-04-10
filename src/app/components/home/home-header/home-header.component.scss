@@ -15,7 +15,7 @@
     top:  variables.$size-90;
     transform: translateX(-50%);
     height: variables.$globalHeigth;
-    max-width: 69.375rem;
+    max-width: variables.$size-1110;
     width: 100%;
     &__content {
       @include legacyVariables.dFlex(center,center,column);

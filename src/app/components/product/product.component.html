@@ -1,0 +1,57 @@
+<div class="product">
+    <div class="product__container">
+      <button class="product__container-btn">go back</button>
+
+      <section class="product__section">
+        <img [src]="imageChange.getImageUrl('image-xx99-mark-two.jpg')" alt="">
+
+        <div class="product__section__content">
+          <p class="product__section__content-new">New Product</p>
+          <h1 class="product__section__content-name">XX99 Mark II Headphones</h1>
+          <p class="product__section__content-description">The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.</p>
+          <p class="product__section__content-prize">$2,999</p>
+          <div class="product__section__btns">
+            <div class="product__section__btns-add">
+              <button>-</button>
+              1
+              <button>+</button>
+            </div>
+            <audiophile-button [btnConfig]="btnConfig" />
+          </div>
+        </div>
+      </section>
+
+      <section class="product__features">
+        <div class="product__features__text-box">
+          <h2>Features</h2>
+          <p>Featuring a genuine leather head strap and premium earcups, these headphones deliver superior comfort for those who like to enjoy endless listening. It includes intuitive controls designed for any situation. Whether you’re taking a business call or just in your own personal space, the auto on/off and pause features ensure that you’ll never miss a beat.
+            The advanced Active Noise Cancellation with built-in equalizer allow you to experience your audio world on your terms. It lets you enjoy your audio in peace, but quickly interact with your surroundings when you need to. Combined with Bluetooth 5. 0 compliant connectivity and 17 hour battery life, the XX99 Mark II headphones gives you superior sound, cutting-edge technology, and a modern design aesthetic.</p>
+        </div>
+        <div class="product__features__includes">
+          <h2>In the box</h2>
+          <ul>
+            <li>
+              <p class="product__features__includes-orange">1x</p>
+              <p>Headphone unit</p>
+            </li>
+            <li>
+              <p class="product__features__includes-orange">2x</p>
+              <p>Replacement earcups</p>
+            </li>
+            <li>
+              <p class="product__features__includes-orange">1x</p>
+              <p>User manual</p>
+            </li>
+            <li>
+              <p class="product__features__includes-orange">1x</p>
+              <p>3.5mm 5m audio cable</p>
+            </li>
+            <li>
+              <p class="product__features__includes-orange">1x</p>
+              <p>Travel bag</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+</div>

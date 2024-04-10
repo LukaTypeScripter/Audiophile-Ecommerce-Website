@@ -12,4 +12,13 @@ import {CommonModule} from "@angular/common";
 })
 export class LayoutHeaderComponent {
   isOpen = signal(false);
+
+  openDropDown() {
+    this.isOpen.set(!this.isOpen())
+    if(this.isOpen()) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+}
 }
