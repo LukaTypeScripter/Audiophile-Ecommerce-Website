@@ -1,22 +1,21 @@
 import {HostListener, Injectable} from '@angular/core';
 import {ResizeService} from "./resize.service";
+import {unsub} from "../../unsub.class";
+import {map, takeUntil} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
-export class ImageChangeService {
+export class ImageChangeService extends unsub{
   screenSize!: 'mobile' | 'tablet' | 'desktop';
   constructor(private resizeService: ResizeService) {
-    this.resizeService.resizeEvent.subscribe(() => {
+    super()
+    this.resizeService.resizeEvent.pipe(map((_) => {
       this.updateScreenSize();
-    });
-    this.updateScreenSize();
+    }),takeUntil(this.unsubscribe$)).subscribe()
   }
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event:any) {
 
-  }
   private updateScreenSize(): void {
     const screenWidth = window.innerWidth;
     if (screenWidth < 768) {
@@ -28,17 +27,15 @@ export class ImageChangeService {
     }
   }
 
-  getImageUrl(imageName: string): string {
+  getImageUrl(imageName: string,pathName:string): string {
     let imageUrl = '';
-
     if (this.screenSize === 'mobile') {
-      imageUrl = `./assets/images/category-headphones/mobile/${imageName}`;
+      imageUrl = `./assets/images/${pathName}/mobile/${imageName}`;
     } else if (this.screenSize === 'tablet') {
-      imageUrl = `./assets/images/category-headphones/tablet/${imageName}`;
+      imageUrl = `./assets/images/${pathName}/tablet/${imageName}`;
     } else {
-      imageUrl = `./assets/images/category-headphones/desktop/${imageName}`;
+      imageUrl = `./assets/images/${pathName}/desktop/${imageName}`;
     }
-
     return imageUrl;
   }
 }

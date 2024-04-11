@@ -5,6 +5,7 @@ import {HomeHeaderComponent} from "./home-header/home-header.component";
 import {CategoryItemsComponent} from "../../shared/category-items/category-items.component";
 import {CommonModule} from "@angular/common";
 import {configShop} from "../../shared/entites";
+import {ShopComponent} from "../../shared/shop/shop.component";
 @Component({
   selector: 'audiophile-home',
   standalone: true,
@@ -12,7 +13,8 @@ import {configShop} from "../../shared/entites";
     ButtonComponent,
     HomeHeaderComponent,
     CategoryItemsComponent,
-    CommonModule
+    CommonModule,
+    ShopComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
