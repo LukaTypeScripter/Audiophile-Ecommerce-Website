@@ -1,4 +1,4 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import {Component, EventEmitter, HostListener, OnInit, Output, output} from '@angular/core';
 import {ButtonComponent} from "../../../shared/button/button.component";
 import {BtnConfig} from "../../../lib/core/interfaces/btnConfig";
 
@@ -12,6 +12,7 @@ import {BtnConfig} from "../../../lib/core/interfaces/btnConfig";
   styleUrl: './home-header.component.scss'
 })
 export class HomeHeaderComponent implements OnInit{
+  @Output() slugEmit = new EventEmitter<string>()
   btnConfig:BtnConfig = {
     class:"btn-header",
     text:"See Product",

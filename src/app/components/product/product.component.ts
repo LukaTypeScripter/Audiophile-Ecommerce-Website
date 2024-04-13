@@ -1,10 +1,15 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import {ButtonComponent} from "../../shared/button/button.component";
 import {ImageChangeService} from "../../lib/services/image-change.service";
 import {CategoryItemsComponent} from "../../shared/category-items/category-items.component";
 import {CommonModule} from "@angular/common";
 import {configShop} from "../../shared/entites";
 import {ShopComponent} from "../../shared/shop/shop.component";
+import {ProductsService} from "../../lib/services/products.service";
+import {HttpClient} from "@angular/common/http";
+import {ActivatedRoute, Params, Router} from "@angular/router";
+import {map, Observable, observable} from "rxjs";
+import {Product} from "../../lib/shared/product";
 
 @Component({
   selector: 'audiophile-product',
@@ -16,10 +21,11 @@ import {ShopComponent} from "../../shared/shop/shop.component";
     ShopComponent
   ],
   templateUrl: './product.component.html',
-  styleUrl: './product.component.scss'
+  styleUrl: './product.component.scss',
+  providers:[HttpClient]
 })
-export class ProductComponent {
-  public imageChange:ImageChangeService = inject(ImageChangeService)
+export class ProductComponent implements OnInit {
+  specificProduct$!: Observable<Product[]>
   btnConfig:any = {
     configOne: {
       class:"btn-header btn-default",
@@ -33,4 +39,23 @@ export class ProductComponent {
     },
   }
   protected readonly configShop = configShop;
+  public imageChange:ImageChangeService = inject(ImageChangeService)
+  router = inject(ActivatedRoute)
+  ngOnInit() {
+    this.specificProduct$  = this.router.queryParams.pipe(map((params:Params) => {
+      let productData = JSON.parse(params['slugObj']);
+      productData.categoryImage.mobile = this.extractPathDetails(productData.categoryImage.mobile);
+      productData.gallery.first.mobile = this.extractPathDetails(productData.gallery.first.mobile)
+      productData.gallery.second.mobile = this.extractPathDetails(productData.gallery.second.mobile)
+      productData.gallery.third.mobile = this.extractPathDetails(productData.gallery.third.mobile)
+      return productData
+    }))
+  }
+
+   extractPathDetails(imagePath: string) {
+    const pathSegments = imagePath.split('/');
+    const folderName = pathSegments.slice(-3, -1)[0];
+    const fileName= pathSegments.slice(-1)[0];
+    return { folderName, fileName };
+  }
 }

@@ -1,4 +1,4 @@
-<audiophile-home-header />
+<audiophile-home-header (slugEmit)="onNavigate($event)"/>
 <main>
   <div class="wrapper">
     <section class="wrapper__items">
@@ -17,20 +17,20 @@
       <div class="wrapper__products__content">
         <h2>ZX9 Speaker</h2>
         <p>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
-        <audiophile-button [btnConfig]="btnConfig.configOne"/>
+        <audiophile-button [btnConfig]="btnConfig.configOne" (click)="onNavigate('ZX9-Speaker')"/>
       </div>
     </section>
     <!--products section two-->
     <section class="wrapper__products2">
         <h2>ZX7 Speaker</h2>
-        <audiophile-button [btnConfig]="btnConfig.configTwo"/>
+        <audiophile-button [btnConfig]="btnConfig.configTwo" (click)="onNavigate('zx7-speaker')"/>
     </section>
   <!---->
     <section class="wrapper__products3">
       <img src="/assets/images/home/desktop/image-earphones-yx1.jpg" alt="">
       <div class="wrapper__products3__content">
         <h2>YX1 Earphones</h2>
-        <audiophile-button [btnConfig]="btnConfig.configTwo"/>
+        <audiophile-button [btnConfig]="btnConfig.configTwo" (click)="onNavigate('YX1-Earphones')"/>
       </div>
     </section>
 <!--section 3-->
