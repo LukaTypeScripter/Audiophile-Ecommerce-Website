@@ -28,10 +28,12 @@
         </li>
       </ul>
     <!--cart-->
-      <button class="header__container-cart">
+      <button class="header__container-cart" (click)="cartIsOpen.set(true)">
         <img src="./assets/images/shared/desktop/icon-cart.svg">
       </button>
   </div>
 
     <audiophile-drop-down *ngIf="isOpen()" [open]="isOpen()"   />
+    <audiophile-cart-modal *ngIf="cartIsOpen()"/>
+    <div class="overlay" *ngIf="cartIsOpen()" (click)="cartIsOpen.set(false)"></div>
 </nav>

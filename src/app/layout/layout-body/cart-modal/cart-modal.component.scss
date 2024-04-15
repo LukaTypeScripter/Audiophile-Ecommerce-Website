@@ -1,0 +1,74 @@
+@use '../../../../assets/styles/variables';
+@use '../../../../assets/styles/legacyVariables';
+@use '../../../../assets/styles/mixins';
+.cart-modal {
+  position: fixed;
+  width: 344px;
+  z-index: 12;
+  right: 5px;
+  &__wrapper {
+    width: 100%;
+    max-width: 23.5625rem;
+    height: 30.5rem;
+    border-radius: .5rem;
+    background-color: #fff;
+    margin-left: auto;
+    padding: 2rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      height: 15rem;
+      overflow: auto;
+      scrollbar-width: none;
+      p {
+        margin: auto;
+        font-weight: 700;
+        color: #10101080;
+        font-size: .9375rem;
+        line-height: 1.5625rem;
+      }
+    }
+    &__total {
+      @include legacyVariables.dFlex(space-between,center,row);
+    p:first-child {
+      text-transform: uppercase;
+      font-size: .9375rem;
+      line-height: 1.5625rem;
+      font-weight: 500;
+      color: black;
+    }
+      &-amount {
+      color: black;
+      font-weight: 700;
+      font-size: 1.125rem;
+    }
+    }
+  }
+  &__section {
+    flex-grow: 1;
+    @include legacyVariables.dFlex(space-between,unset,column);
+    &__header {
+      @include legacyVariables.dFlex(space-between,center,row);
+    p {
+      color: black;
+      font-size: 1.125rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+      button{
+        color: #10101080;
+        text-decoration: underline;
+        font-weight: 500;
+        font-size: .9375rem;
+      }
+    }
+  }
+ @include mixins.desktop() {
+   right: 51px;
+ }
+}
+

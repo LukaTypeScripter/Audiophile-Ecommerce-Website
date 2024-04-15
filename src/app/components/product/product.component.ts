@@ -9,6 +9,7 @@ import {HttpClient} from "@angular/common/http";
 import {ActivatedRoute, Params} from "@angular/router";
 import {map, Observable} from "rxjs";
 import {NavigateService} from "../../lib/services/navigate.service";
+import {CartService} from "../../lib/services/cart.service";
 
 @Component({
   selector: 'audiophile-product',
@@ -41,9 +42,12 @@ export class ProductComponent implements OnInit {
   public imageChange:ImageChangeService = inject(ImageChangeService)
   private router = inject(ActivatedRoute)
   private  navigateService = inject(NavigateService)
+  private  cartService = inject(CartService)
   ngOnInit() {
     this.specificProduct$  = this.router.queryParams.pipe(map((params:Params) => {
       let productData = JSON.parse(params['slugObj']);
+      console.log(productData,"awawd")
+      this.cartService.specificCartObject.set(productData)
       productData.categoryImage.mobile = this.extractPathDetails(productData.categoryImage.mobile);
       productData.gallery.first.mobile = this.extractPathDetails(productData.gallery.first.mobile)
       productData.gallery.second.mobile = this.extractPathDetails(productData.gallery.second.mobile)
