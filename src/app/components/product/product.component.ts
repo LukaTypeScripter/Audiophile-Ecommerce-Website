@@ -5,11 +5,10 @@ import {CategoryItemsComponent} from "../../shared/category-items/category-items
 import {CommonModule} from "@angular/common";
 import {configShop} from "../../shared/entites";
 import {ShopComponent} from "../../shared/shop/shop.component";
-import {ProductsService} from "../../lib/services/products.service";
 import {HttpClient} from "@angular/common/http";
-import {ActivatedRoute, Params, Router} from "@angular/router";
-import {map, Observable, observable} from "rxjs";
-import {Product} from "../../lib/shared/product";
+import {ActivatedRoute, Params} from "@angular/router";
+import {map, Observable} from "rxjs";
+import {NavigateService} from "../../lib/services/navigate.service";
 
 @Component({
   selector: 'audiophile-product',
@@ -25,7 +24,7 @@ import {Product} from "../../lib/shared/product";
   providers:[HttpClient]
 })
 export class ProductComponent implements OnInit {
-  specificProduct$!: Observable<Product[]>
+  specificProduct$!: Observable<any>
   btnConfig:any = {
     configOne: {
       class:"btn-header btn-default",
@@ -40,7 +39,8 @@ export class ProductComponent implements OnInit {
   }
   protected readonly configShop = configShop;
   public imageChange:ImageChangeService = inject(ImageChangeService)
-  router = inject(ActivatedRoute)
+  private router = inject(ActivatedRoute)
+  private  navigateService = inject(NavigateService)
   ngOnInit() {
     this.specificProduct$  = this.router.queryParams.pipe(map((params:Params) => {
       let productData = JSON.parse(params['slugObj']);
@@ -57,5 +57,8 @@ export class ProductComponent implements OnInit {
     const folderName = pathSegments.slice(-3, -1)[0];
     const fileName= pathSegments.slice(-1)[0];
     return { folderName, fileName };
+  }
+  onNavigation(name:string) {
+    this.navigateService.navigateToProduct(name)
   }
 }

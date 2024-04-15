@@ -1,13 +1,13 @@
-import {Component, HostListener, inject, OnInit} from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {ButtonComponent} from "../../shared/button/button.component";
-import {BtnConfig} from "../../lib/core/interfaces/btnConfig";
 import {HomeHeaderComponent} from "./home-header/home-header.component";
 import {CategoryItemsComponent} from "../../shared/category-items/category-items.component";
 import {CommonModule} from "@angular/common";
 import {configShop} from "../../shared/entites";
 import {ShopComponent} from "../../shared/shop/shop.component";
 import {ProductsService} from "../../lib/services/products.service";
-import {ActivatedRoute, Router} from "@angular/router";
+import { Router} from "@angular/router";
+import {NavigateService} from "../../lib/services/navigate.service";
 @Component({
   selector: 'audiophile-home',
   standalone: true,
@@ -21,7 +21,7 @@ import {ActivatedRoute, Router} from "@angular/router";
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent {
+export class HomeComponent{
   btnConfig:any = {
     configOne: {
       class:"btn-header color",
@@ -35,15 +35,9 @@ export class HomeComponent {
     }
   }
   protected readonly configShop = configShop;
-  productService = inject(ProductsService)
-  activatedRoute = inject(ActivatedRoute)
-  router = inject(Router)
+  private  navigateService = inject(NavigateService)
+
   onNavigate(slug: string): void {
-    let slugObj = this.productService.seeProduct(slug) ;
-    this.router.navigate(['/products'], {
-      queryParams: { slugObj: JSON.stringify(slugObj) }
-    }).then(() => {
-      window.scrollTo(0, 0);
-    })
+  this.navigateService.navigateToProduct(slug)
   }
 }
