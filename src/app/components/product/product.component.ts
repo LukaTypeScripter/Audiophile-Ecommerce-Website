@@ -74,7 +74,7 @@ export class ProductComponent implements OnInit {
 
 
   increment() {
-    this.count.set(this.count()+ 1);
+    this.count.set(this.count() + 1);
   }
 
   decrement() {
