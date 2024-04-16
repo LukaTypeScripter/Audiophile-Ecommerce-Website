@@ -3,17 +3,30 @@
   <div class="cart-modal__wrapper">
       <div class="cart-modal__section">
             <div class="cart-modal__section__header">
-              <p>CART(0)</p>
-              <button>Remove All</button>
+              <p>CART({{cart.products.length}})</p>
+              <button (click)="removeAll()">Remove All</button>
             </div>
 
-            <div class="cart-modal__wrapper__list">
-                <p>Yor cart is empty</p>
-            </div>
-
+        <div class="cart-modal__wrapper__list" >
+          <p *ngIf="!cart.products.length;else product">Your cart is empty</p>
+            <ng-template #product>
+                <div class="cart-modal__wrapper__list__item" *ngFor="let items of cart.products">
+                  <img [src]="'/assets' +items.cartImage" alt="">
+                  <div class="cart-modal__wrapper__list__item-info">
+                    <p>{{items.shortName}}</p>
+                    <span>{{items.price}}$</span>
+                  </div>
+                  <div class="cart-modal__wrapper__list__item-actions">
+                    <button>+</button>
+                    <span>{{items.quantity}}</span>
+                    <button>-</button>
+                  </div>
+                </div>
+            </ng-template>
+        </div>
         <div class="cart-modal__wrapper__total">
           <p>Total</p>
-          <p class="cart-modal__wrapper__total-amount">$0</p>
+          <p class="cart-modal__wrapper__total-amount">{{cart.totalAmount}}$</p>
         </div>
         <div style="width: 100%">
           <audiophile-button [btnConfig]="btnConfig.configOne"/>

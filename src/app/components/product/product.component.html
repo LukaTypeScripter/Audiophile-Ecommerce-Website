@@ -13,11 +13,11 @@
           <p class="product__section__content-prize">{{product.price}}$</p>
           <div class="product__section__btns">
             <div class="product__section__btns-add">
-              <button>-</button>
-              1
-              <button>+</button>
+              <button (click)="decrement()">-</button>
+              {{count()}}
+              <button (click)="increment()">+</button>
             </div>
-            <audiophile-button [btnConfig]="btnConfig.configOne" />
+            <audiophile-button [btnConfig]="btnConfig.configOne" (click)="onQuantityChange(product,count())" />
           </div>
         </div>
       </section>

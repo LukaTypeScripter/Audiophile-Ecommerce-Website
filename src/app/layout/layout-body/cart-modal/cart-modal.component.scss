@@ -24,6 +24,39 @@
       height: 15rem;
       overflow: auto;
       scrollbar-width: none;
+      &__item {
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        img {
+          width: 4rem;
+          height: 4rem;
+          margin-right: 1rem;
+        }
+        &-actions {
+          margin-left: auto;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 6rem;
+          padding: 0 .6875rem;
+          height: 2rem;
+          background-color: #f1f1f1;
+          font-weight: 700;
+          span {
+            color: black;
+          }
+        }
+        &-info {
+        font-weight: 700;
+          p {
+            color: black;
+          }
+          span {
+            color: #10101080;
+          }
+        }
+      }
       p {
         margin: auto;
         font-weight: 700;

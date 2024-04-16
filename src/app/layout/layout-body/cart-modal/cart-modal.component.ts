@@ -1,12 +1,14 @@
 import {Component, inject} from '@angular/core';
 import {ButtonComponent} from "../../../shared/button/button.component";
 import {CartService} from "../../../lib/services/cart.service";
+import {CommonModule} from "@angular/common";
 
 @Component({
   selector: 'audiophile-cart-modal',
   standalone: true,
   imports: [
-    ButtonComponent
+    ButtonComponent,
+    CommonModule
   ],
   templateUrl: './cart-modal.component.html',
   styleUrl: './cart-modal.component.scss'
@@ -19,6 +21,9 @@ export class CartModalComponent {
       spaceFromTop:"0"
     },
   }
-  cartService = inject(CartService)
-
+  private cartService = inject(CartService)
+  cart = this.cartService.cart();
+  removeAll() {
+    this.cartService.removeAll()
+  }
 }
