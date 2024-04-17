@@ -6,10 +6,11 @@ import {CommonModule} from "@angular/common";
 import {configShop} from "../../shared/entites";
 import {ShopComponent} from "../../shared/shop/shop.component";
 import {HttpClient} from "@angular/common/http";
-import {ActivatedRoute, Params} from "@angular/router";
+import {ActivatedRoute, Params, Router} from "@angular/router";
 import {map, Observable} from "rxjs";
 import {NavigateService} from "../../lib/services/navigate.service";
 import {CartService} from "../../lib/services/cart.service";
+import {Product} from "../../lib/shared/product";
 
 @Component({
   selector: 'audiophile-product',
@@ -43,6 +44,7 @@ export class ProductComponent implements OnInit {
   protected readonly configShop = configShop;
   public imageChange:ImageChangeService = inject(ImageChangeService)
   private router = inject(ActivatedRoute)
+  private route = inject(Router)
   private  navigateService = inject(NavigateService)
   private  cartService = inject(CartService)
   ngOnInit() {
@@ -67,7 +69,7 @@ export class ProductComponent implements OnInit {
     this.navigateService.navigateToProduct(name)
   }
 
-  onQuantityChange(item:any,quantity:number) {
+  onQuantityChange(item:Product,quantity:number) {
     this.cartService.cart().products.push(this.product())
     this.cartService.addItem(item,quantity)
   }
@@ -82,5 +84,7 @@ export class ProductComponent implements OnInit {
       this.count.set(this.count() - 1);
     }
   }
-
+  goBack() {
+    this.route.navigate(['/'])
+  }
 }

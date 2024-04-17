@@ -1,6 +1,6 @@
 <div class="product" *ngIf="specificProduct$ | async as product">
     <div class="product__container">
-      <button class="product__container-btn">go back</button>
+      <button class="product__container-btn" (click)="goBack()">go back</button>
 
       <section class="product__section" >
 

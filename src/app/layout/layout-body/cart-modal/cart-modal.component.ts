@@ -2,6 +2,7 @@ import {Component, inject} from '@angular/core';
 import {ButtonComponent} from "../../../shared/button/button.component";
 import {CartService} from "../../../lib/services/cart.service";
 import {CommonModule} from "@angular/common";
+import {Product} from "../../../lib/shared/product";
 
 @Component({
   selector: 'audiophile-cart-modal',
@@ -25,5 +26,8 @@ export class CartModalComponent {
   cart = this.cartService.cart();
   removeAll() {
     this.cartService.removeAll()
+  }
+  incrementQuantity(product:Product, incrementNumber:number, type:string) {
+    this.cartService.onIncrementQuantity(product,incrementNumber,type)
   }
 }

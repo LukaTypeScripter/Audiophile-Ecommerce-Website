@@ -28,6 +28,7 @@ interface OtherProduct {
 export interface Product {
   cartImage: string;
   category: string;
+  quantity:number;
   categoryImage: {
     mobile: { folderName: string; fileName: string };
     tablet: string;
