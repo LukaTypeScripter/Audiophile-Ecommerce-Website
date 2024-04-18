@@ -56,8 +56,8 @@
 
       <section class="product__gallery">
           <div class="product__gallery__left">
-            <img [src]="imageChange.getImageUrl(product.gallery.first.mobile.fileName,product.gallery.first.mobile.folderName)" alt="">
-            <img [src]="imageChange.getImageUrl(product.gallery.second.mobile.fileName,product.gallery.second.mobile.folderName)" alt="">
+            <img [src]="imageChange.getImageUrl(product.gallery.first.mobile?.fileName,product.gallery.first.mobile.folderName)" alt="">
+            <img [src]="imageChange.getImageUrl(product.gallery.second.mobile?.fileName,product.gallery.second.mobile.folderName)" alt="">
           </div>
           <img [src]="imageChange.getImageUrl(product.gallery.third.mobile.fileName,product.gallery.third.mobile.folderName)" alt="">
       </section>

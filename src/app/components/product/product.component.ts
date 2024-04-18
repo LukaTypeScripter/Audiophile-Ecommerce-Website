@@ -85,6 +85,7 @@ export class ProductComponent implements OnInit {
     }
   }
   goBack() {
+    console.log("back")
     this.route.navigate(['/'])
   }
 }
